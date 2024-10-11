@@ -3,6 +3,7 @@ import Layout from "../pages/Layouts/Layout";
 import Home from "../pages/Home";
 import Search from "../pages/Search";
 import NotFound from "../pages/NotFound";
+import Create from "../pages/Create";
   
   const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ import NotFound from "../pages/NotFound";
             path : "/search",
             element : <Search/>
         },
+        {
+          path : "/create",
+          element : <Create/>
+      },
         {
             path: "*",
             element:<NotFound/>
