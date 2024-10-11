@@ -1,0 +1,32 @@
+{
+    "books" : [
+        {
+            "id" : 1,
+            "title": "Eloquent javaScript",
+            "description" : "Best js Book",
+            "categories" : [
+                "javaScript",
+                "programming"
+            ]
+        },
+        {
+            "id" : 1,
+            "title": "React js",
+            "description" : "Best js Book",
+            "categories" : [
+                "javaScript",
+                "programming",
+                "framework"
+            ]
+        },
+        {
+            "id" : 1,
+            "title": "Next js",
+            "description" : "Best js Book",
+            "categories" : [
+                "javaScript",
+                "programming"
+            ]
+        }
+    ]
+}
