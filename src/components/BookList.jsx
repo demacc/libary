@@ -1,6 +1,9 @@
 import React from 'react';
 import book from "../assets/book.jpg"
 import useFetch from '../hooks/useFetch';
+import { Link } from 'react-router-dom';
+
+
 
 export default function BookList() {
     let {data : books , loading , error} = useFetch("http://localhost:3000/books")
@@ -8,13 +11,14 @@ export default function BookList() {
     if(error){
         return <p>{error}</p>
     }
+
   return (
    <div>
     {loading && <div>Loading ..</div>}
   {!!books && (
       <div className=" grid grid-cols-2 md:grid-cols-4 gap-4 my-3 ">
       {books.map((b)=>(
-          <div key={b.id}>
+          <Link  key={b.id} to={"/books/" + b.id}>
           {/* image */}
           <img src={book} alt=""  className="h-[320px] w-[320px]"/>
           {/* description */}
@@ -28,7 +32,7 @@ export default function BookList() {
               ))}
               </div>
           </div>
-          </div>
+          </Link>
       ))}
       </div>
 
