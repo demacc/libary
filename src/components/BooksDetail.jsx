@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
+import bookImg from "../assets/book.jpg"
 
 function BooksDetail(){
 
@@ -13,11 +14,21 @@ function BooksDetail(){
         <div>
             {loading && <div>Loading ..</div>}
             {!!books && (
-                <div>
-                    <h2>{books.title}</h2>
-                    <p>{books.description}</p>
-                    <p>{books.categories}</p>
-                    <p>{books.body}</p>
+                <div className="grid grid-cols-2">
+                    <div>
+                        <img src={bookImg} alt="" className="w-[80%] h-[420px]"/>
+                    </div>
+                    <div className="space-y-2">
+                        <h1 className="font-bold text-3xl">{books.title}</h1>
+                        <div className="space-x-2">
+                            {books.categories.map((c)=>(
+                                <span className="text-sm text-white bg-blue-400 rounded-full px-2 py-1 " key={c}>{c}</span>
+                            ))}
+                        </div>
+                        <div>
+                            {books.description}
+                        </div>
+                    </div>
                 </div>
             )}
         </div>
