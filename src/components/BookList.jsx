@@ -47,7 +47,7 @@ export default function BookList() {
           ))}
         </div>
       )}
-      {search && !books.length && (
+      {books && !books.length && (
         <p className=" text-center text-2xl font-bold font-mono text-pirmary">
           No Search Result Found ...
         </p>

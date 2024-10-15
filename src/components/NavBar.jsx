@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "../assets/pf.png";
 import { Link, useNavigate } from "react-router-dom";
+import useTheme from "../hooks/useTheme";
 
 export default function NavBar() {
   let [search, setSearch] = useState("");
@@ -10,10 +11,16 @@ export default function NavBar() {
     navigate("/?search=" + search);
   };
 
+  let { theme } = useTheme();
+  console.log(theme);
   return (
     <div>
       {/* item one */}
-      <nav className=" border border-b-[1px]">
+      <nav
+        className={`border border-b-[1px] ${
+          theme === "dark" ? "bg-blue-400" : "bg-yellow-400"
+        }`}
+      >
         <ul className="flex justify-between  items-center p-3 max-w-6xl mx-auto">
           <li className="flex gap-2 items-center ">
             <svg
