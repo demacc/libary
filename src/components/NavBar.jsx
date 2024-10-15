@@ -11,14 +11,15 @@ export default function NavBar() {
     navigate("/?search=" + search);
   };
 
-  let { theme } = useTheme();
+  let { theme, changeTheme } = useTheme();
   console.log(theme);
   return (
     <div>
       {/* item one */}
       <nav
+        onClick={changeTheme}
         className={`border border-b-[1px] ${
-          theme === "dark" ? "bg-blue-400" : "bg-yellow-400"
+          theme === "dark" ? "bg-slate-600" : "bg-yellow-400"
         }`}
       >
         <ul className="flex justify-between  items-center p-3 max-w-6xl mx-auto">
